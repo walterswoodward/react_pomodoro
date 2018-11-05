@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import wav from "./audio/gong.wav";
-import play_pause from './images/pause_play.png';
+import play_pause from "./images/pause_play.png";
 
 class PomodoroClock extends Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class PomodoroClock extends Component {
       relaxMinutes: 5,
       timer: 20 * 60, // seconds
       workActive: true,
-      paused: false,
-        };
+      paused: false
+    };
   }
 
   // Used in the timerComponent only, but placed here to centralize method store
@@ -149,7 +149,14 @@ class PomodoroClock extends Component {
                 {this.state.workActive ? "Work" : "Relax"}
               </h2>
               <div id="current_time">{this.displayTime()}</div>
-              <button id="start_button" onClick={this.start}> <img src={play_pause} alt="play_pause icon" id="play_pause_icon" /></button>
+              <button id="start_button" onClick={this.start}>
+                {" "}
+                <img
+                  src={play_pause}
+                  alt="play_pause icon"
+                  id="play_pause_icon"
+                />
+              </button>
             </div>
           </div>
         </div>
@@ -199,7 +206,7 @@ class Timer extends React.Component {
     return (
       <div id={this.props.token}>
         <h5 className="settings_title">{this.props.token}</h5>
-        
+
         {/* span used here for inline attribute */}
         <div className="settings_time">{this.state.setTime} minutes</div>
         <button
