@@ -1,32 +1,148 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Poor+Story);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* VARIABLES */
+:root {
+  --main-color: gold;
+  --main-bg-color: black;
+  --text-color: white;
+}
+
+body {
+  color: var(--text-color);
   text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+#title {
+  font-family: "Poor Story";
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
+  background: -webkit-linear-gradient(#eee, var(--main-color)
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#container {
+  width: 100%;
+  background: var(--main-bg-color);
+  height: 100vh;
+}
+
+#settings_container {
+  display: flex;
+  justify-content: center;
+}
+
+.settings_col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 250px;
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+
+.settings_btns {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: none;
+  border: transparent;
+  font-size: 3em;
+  width: 30px;
+  height: 30px;
+  /* border-radius: 100%; */
+  margin: 0px 5px;
+}
+
+.settings_btns:hover {
+  /* border: 1px solid white; */
+  color: var(--main-color)
+;
+  cursor: pointer;
+}
+
+.settings_btns:active:focus {
+  background-color: transparent;
+}
+
+.settings_btns:active {
+  color: #fff;
+}
+
+.settings_btns:focus {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.settings_btns[disabled] {
+  color: transparent;
+  background-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.settings_btns[disabled]:hover {
+  color: transparent;
+  background-color: transparent;
+}
+
+.settings_time {
+  font-size: 1.8rem;
+  vertical-align: 3px;
+}
+
+.settings_title {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.current {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px 40px 50px 10px;
+}
+
+#current_title {
+  font-size: 3.1rem;
+  width: 150px;
+}
+
+#timer_title:hover {
+  background: -webkit-linear-gradient(#eee, var(--main-color)
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#current_time {
+  font-size: 1.9rem;
+}
+
+#play_pause_icon {
+  width: 30px;
+  height: 30px;
+  background: -webkit-linear-gradient(#eee, var(--main-color)
+);
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#play_pause_icon:hover {
+  cursor: pointer;
 }
