@@ -124,7 +124,7 @@ class PomodoroClock extends Component {
         <div id="title">Pomodoro Clock</div>
 
         <div id="settings_container">
-          <div className="settings_col">
+          <div className="settings">
             <Timer
               updateSession={this.updateSessionLength}
               setTime={this.state.relaxMinutes}
@@ -204,7 +204,7 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <div id={this.props.token}>
+      <div id={this.props.token} className="setting">
         <h5 className="settings_title">{this.props.token}</h5>
 
         {/* span used here for inline attribute */}
@@ -213,8 +213,7 @@ class Timer extends React.Component {
           onClick={this.handleTimeDec}
           disabled={this.props.paused}
           className="settings_btns"
-        >
-          -
+        >-
         </button>
         <button
           onClick={this.handleTimeInc}

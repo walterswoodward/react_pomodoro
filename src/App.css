@@ -46,12 +46,16 @@ body {
   justify-content: center;
 }
 
-.settings_col {
+.settings {
   display: flex;
   flex-direction: column;
   width: 250px;
   font-size: 1rem;
   padding: 10px 0px;
+}
+
+.setting {
+  height: 150px;
 }
 
 .settings_btns {
