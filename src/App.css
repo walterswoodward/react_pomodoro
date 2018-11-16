@@ -13,8 +13,8 @@
 :root {
   --main-color: hsl(0, 0%, 60%);
   --main-bg-color: black;
-  --text-color: white;
-  --background-opacity: rgba(0,0,0,0.8);
+  --text-color: silver;
+  --background-opacity: rgba(0,0,0,0.5);
 }
 
 body {
@@ -31,10 +31,10 @@ body {
   font-family: "Poor Story";
   font-size: 3.5rem;
   margin: 0;
-  padding: 0;
+  padding: 5vh;
   background: var(--background-opacity);
-  color: white;
-  height: 10vh;
+  color: var(--text-color);
+  height: 5vh;
   font-weight: bold;
 }
 
@@ -132,6 +132,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   padding-top: 110px;
 
 }
