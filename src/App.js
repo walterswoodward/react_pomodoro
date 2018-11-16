@@ -2,15 +2,22 @@ import React, { Component } from "react";
 import "./App.css";
 import wav from "./audio/gong.wav";
 import play_pause from "./images/pause_play.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleUp,
+  faAngleDown,
+  faPause,
+  faPlay
+} from "@fortawesome/free-solid-svg-icons";
 
 class PomodoroClock extends Component {
   constructor(props) {
     super(props);
     this.state = {
       // initially both set to 1 minute
-      workMinutes: 20,
-      relaxMinutes: 5,
-      timer: 20 * 60, // seconds
+      workMinutes: 10,
+      relaxMinutes: 1,
+      timer: 10 * 60, // seconds
       workActive: true,
       paused: false
     };
@@ -52,7 +59,7 @@ class PomodoroClock extends Component {
     // STEP #2 -- workActive default is true
 
     if (this.state.workActive) {
-      // STEP #3 -- timer is the actual time value that decrements in seconds
+      // STEP #3 -- updates current timer time. timer is the actual time value that decrements in seconds
       if (this.state.timer > 0) {
         timer = this.state.timer;
       } else {
@@ -93,7 +100,7 @@ class PomodoroClock extends Component {
               // restart pomodoro
               this.start();
             }
-          }.bind(this),
+          }.bind(this), // so that PomodoroClock State/Methods are accessible
           10 // TO BE ACCURATE THIS NEEDS TO BE 1000ms, but for testing purposes it is set lower
         )
       });
@@ -121,7 +128,7 @@ class PomodoroClock extends Component {
   render() {
     return (
       <div id="container">
-        <div id="title">Pomodoro Clock</div>
+        <div id="title">POMODORO</div>
 
         <div id="settings_container">
           <div className="settings">
@@ -131,8 +138,6 @@ class PomodoroClock extends Component {
               token="RELAX"
               paused={this.state.paused}
             />
-            <br />
-            <br />
             <br />
             <Timer
               updateSession={this.updateSessionLength}
@@ -149,14 +154,16 @@ class PomodoroClock extends Component {
                 {this.state.workActive ? "Work" : "Relax"}
               </h2>
               <div id="current_time">{this.displayTime()}</div>
-              <button id="start_button" onClick={this.start}>
+              <a id="start_button" onClick={this.start}>
                 {" "}
-                <img
+                {/* <img
                   src={play_pause}
                   alt="play_pause icon"
                   id="play_pause_icon"
-                />
-              </button>
+                /> */}
+                <FontAwesomeIcon icon={faPlay} className="play_pause_icon" id="start_button_play" />
+                <FontAwesomeIcon icon={faPause} className="play_pause_icon" id="start_button_pause" />
+              </a>
             </div>
           </div>
         </div>
@@ -209,19 +216,21 @@ class Timer extends React.Component {
 
         {/* span used here for inline attribute */}
         <div className="settings_time">{this.state.setTime} minutes</div>
-        <button
+        <a
           onClick={this.handleTimeDec}
           disabled={this.props.paused}
           className="settings_btns"
-        >-
-        </button>
-        <button
+        >
+          {" "}
+          <FontAwesomeIcon icon={faAngleDown} id="settings_btns_down_arrow" />
+        </a>
+        <a
           onClick={this.handleTimeInc}
           disabled={this.props.paused}
           className="settings_btns"
         >
-          +
-        </button>
+          <FontAwesomeIcon icon={faAngleUp} id="settings_btns_up_arrow" />
+        </a>
       </div>
     );
   }
