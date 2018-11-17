@@ -11,9 +11,9 @@
 
 /* VARIABLES */
 :root {
-  --main-color: hsl(0, 0%, 60%);
+  --hover-color: gold;
   --main-bg-color: black;
-  --text-color: silver;
+  --text-color: white;
   --background-opacity: rgba(0,0,0,0.5);
 }
 
@@ -38,13 +38,21 @@ body {
   font-weight: bold;
 }
 
+.filter {
+  background-image: url("https://res.cloudinary.com/pacmankana/image/upload/v1542419615/react_pomodoro/black_linen_v2.png");
+  background-size: contain;
+}
+
 #container {
+
   width: 80%;
+  max-width: 880px;
+  margin: auto auto;
   background: var(--main-bg-color);
   height: 100vh;
-  margin: 0 10%;
-  /* background-image: url("https://res.cloudinary.com/pacmankana/image/upload/v1542328386/react_pomodoro/ying_yang.jpg"); */
-  /* background-size: contain; */
+  background-color: rgba(255,255,255,0.3);
+
+  
 }
 
 #settings_container {
@@ -80,7 +88,7 @@ body {
 
 .settings_btns:hover {
   /* border: 1px solid white; */
-  color: var(--main-color);
+  color: var(--hover-color);
   cursor: pointer;
 }
 
@@ -143,7 +151,7 @@ body {
 }
 
 #timer_title:hover {
-  background: -webkit-linear-gradient(#eee, var(--main-color));
+  background: -webkit-linear-gradient(#eee, var(--hover-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -157,7 +165,7 @@ body {
 }
 #start_button:hover {
   cursor: pointer;
-  color: var(--main-color);
+  color: var(--hover-color);
 }
 
 @media (max-width: 600px) {

@@ -127,6 +127,7 @@ class PomodoroClock extends Component {
 
   render() {
     return (
+      <div className="filter">
       <div id="container">
         <div id="title">POMODORO</div>
 
@@ -167,6 +168,7 @@ class PomodoroClock extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }
